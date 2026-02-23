@@ -54,6 +54,28 @@ def isPalindrome(x):
     return revX==x
 print(isPalindrome(121))
 
+# # 20. Valid Parentheses
+def isValid(s):
+    l = []
+    openParen = "([{"
+    closeParen = ")]}"
+    
+    for paren in s:
+        if paren in openParen:
+            l.append(paren)
+        else:
+            if not l:
+                return False
+            if openParen.index(l[-1]) == closeParen.index(paren):
+                l.pop()
+            else:
+                return False
+    return len(l) == 0
+
+isValid("([)]")
+
+
+
   
 
 
